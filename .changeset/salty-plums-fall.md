@@ -1,0 +1,5 @@
+---
+"@repo/math": minor
+---
+
+test
