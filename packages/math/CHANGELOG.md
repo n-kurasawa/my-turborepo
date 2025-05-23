@@ -1,4 +1,4 @@
-# @repo/math
+# @n-kurasawa/math
 
 ## 1.0.0
 
