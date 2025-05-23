@@ -1,6 +1,11 @@
 {
   "name": "@repo/math",
+  "version": "0.1.0",
+  "private": true,
   "type": "module",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "build": "tsup src/index.ts --format cjs,esm --dts"
