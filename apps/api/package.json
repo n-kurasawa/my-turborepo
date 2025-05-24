@@ -1,5 +1,6 @@
 {
   "name": "@n-kurasawa/api",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/n-kurasawa/my-turborepo.git",
