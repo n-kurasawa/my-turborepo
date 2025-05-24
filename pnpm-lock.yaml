@@ -23,9 +23,18 @@ importers:
       '@hono/node-server':
         specifier: ^1.8.2
         version: 1.14.2(hono@3.12.12)
+      '@hono/swagger-ui':
+        specifier: ^0.2.0
+        version: 0.2.2(hono@3.12.12)
+      '@hono/zod-openapi':
+        specifier: ^0.9.0
+        version: 0.9.10(hono@3.12.12)(zod@3.25.28)
       hono:
         specifier: ^3.12.0
         version: 3.12.12
+      zod:
+        specifier: ^3.22.0
+        version: 3.25.28
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*
@@ -194,6 +203,11 @@ importers:
         version: 5.8.2
 
 packages:
+
+  '@asteasolutions/zod-to-openapi@5.5.0':
+    resolution: {integrity: sha512-d5HwrvM6dOKr3XdeF+DmashGvfEc+1oiEfbscugsiwSTrFtuMa7ETpW9sTNnVgn+hJaz+PRxPQUYD7q9/5dUig==}
+    peerDependencies:
+      zod: ^3.20.2
 
   '@babel/runtime-corejs3@7.27.0':
     resolution: {integrity: sha512-UWjX6t+v+0ckwZ50Y5ShZLnlk95pP5MyW/pon9tiYzl3+18pkTHTFNTKr7rQbfRXPkowt2QAn30o1b6oswszew==}
@@ -399,6 +413,24 @@ packages:
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
+
+  '@hono/swagger-ui@0.2.2':
+    resolution: {integrity: sha512-Bco6XdKkTP7yIVWXpquLQayvjwzDmsmsESjF7VcrU/ZPTYafGvvpHf7Z6PHTWyp+JpdYORZXlyZ75T3At2KfAA==}
+    peerDependencies:
+      hono: '*'
+
+  '@hono/zod-openapi@0.9.10':
+    resolution: {integrity: sha512-v/b/z0qPxDo952gjRyhJ0n9ifbPoIluR2KmXDL20np0hj99+XvakoIHK5/T/3+hUmXlTj1Kn3TiGsSV6hwZesg==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      hono: '>=3.11.3'
+      zod: 3.*
+
+  '@hono/zod-validator@0.2.1':
+    resolution: {integrity: sha512-HFoxln7Q6JsE64qz2WBS28SD33UB2alp3aRKmcWnNLDzEL1BLsWfbdX6e1HIiUprHYTIXf5y7ax8eYidKUwyaA==}
+    peerDependencies:
+      hono: '>=3.9.0'
+      zod: ^3.19.1
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1725,6 +1757,9 @@ packages:
     resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
     engines: {node: '>=6'}
 
+  openapi3-ts@4.4.0:
+    resolution: {integrity: sha512-9asTNB9IkKEzWMcHmVZE7Ts3kC9G7AFHfs8i7caD8HbI76gEjdkId4z/AkP83xdZsH7PLAnnbl47qZkXuxpArw==}
+
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
@@ -2303,6 +2338,11 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
+  yaml@2.8.0:
+    resolution: {integrity: sha512-4lLa/EcQCB0cJkyts+FpIRx5G/llPxfP6VQU5KByHEhLxY3IJCH0f0Hy1MHI8sClTvsIb8qwRJ6R/ZdlDJ/leQ==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
   yn@3.1.1:
     resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
     engines: {node: '>=6'}
@@ -2311,7 +2351,15 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@3.25.28:
+    resolution: {integrity: sha512-/nt/67WYKnr5by3YS7LroZJbtcCBurDKKPBPWWzaxvVCGuG/NOsiKkrjoOhI8mJ+SQUXEbUzeB3S+6XDUEEj7Q==}
+
 snapshots:
+
+  '@asteasolutions/zod-to-openapi@5.5.0(zod@3.25.28)':
+    dependencies:
+      openapi3-ts: 4.4.0
+      zod: 3.25.28
 
   '@babel/runtime-corejs3@7.27.0':
     dependencies:
@@ -2449,6 +2497,22 @@ snapshots:
   '@hono/node-server@1.14.2(hono@3.12.12)':
     dependencies:
       hono: 3.12.12
+
+  '@hono/swagger-ui@0.2.2(hono@3.12.12)':
+    dependencies:
+      hono: 3.12.12
+
+  '@hono/zod-openapi@0.9.10(hono@3.12.12)(zod@3.25.28)':
+    dependencies:
+      '@asteasolutions/zod-to-openapi': 5.5.0(zod@3.25.28)
+      '@hono/zod-validator': 0.2.1(hono@3.12.12)(zod@3.25.28)
+      hono: 3.12.12
+      zod: 3.25.28
+
+  '@hono/zod-validator@0.2.1(hono@3.12.12)(zod@3.25.28)':
+    dependencies:
+      hono: 3.12.12
+      zod: 3.25.28
 
   '@humanfs/core@0.19.1': {}
 
@@ -4011,6 +4075,10 @@ snapshots:
     dependencies:
       mimic-fn: 2.1.0
 
+  openapi3-ts@4.4.0:
+    dependencies:
+      yaml: 2.8.0
+
   optionator@0.9.4:
     dependencies:
       deep-is: 0.1.4
@@ -4717,6 +4785,10 @@ snapshots:
 
   wrappy@1.0.2: {}
 
+  yaml@2.8.0: {}
+
   yn@3.1.1: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.25.28: {}
