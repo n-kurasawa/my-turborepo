@@ -1,7 +1,5 @@
-import { add } from "@n-kurasawa/math/add";
-
 function Page() {
-  return <div>{add(1, 2)}</div>;
+  return <div>hello world</div>;
 }
 
 export default Page;

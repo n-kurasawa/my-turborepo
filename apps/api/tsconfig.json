@@ -1,0 +1,11 @@
+{
+  "extends": "@repo/typescript-config/hono.json",
+  "include": ["src", "lib"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./",
+    "paths": {
+      "@lib/*": ["./lib/*"]
+    }
+  }
+}
