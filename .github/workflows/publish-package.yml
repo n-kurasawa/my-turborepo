@@ -21,6 +21,6 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: pnpm turbo run build
-      - run: pnpm publish --access restricted
+      - run: pnpm publish:api
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
