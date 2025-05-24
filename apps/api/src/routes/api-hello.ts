@@ -44,8 +44,9 @@ const apiHelloRoute = createRoute({
   },
 });
 
-export function registerApiHelloRoute(app: OpenAPIHono) {
-  app.openapi(apiHelloRoute, async (c) => {
+export const apiHelloApp = new OpenAPIHono().openapi(
+  apiHelloRoute,
+  async (c) => {
     const body = await c.req.json();
     const { name, message } = ApiHelloRequestSchema.parse(body);
 
@@ -60,5 +61,5 @@ export function registerApiHelloRoute(app: OpenAPIHono) {
       version: "1.0.0",
       timestamp: new Date().toISOString(),
     });
-  });
-}
+  }
+);

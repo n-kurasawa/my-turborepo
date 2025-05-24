@@ -1,9 +1,25 @@
 {
   "name": "@n-kurasawa/api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n-kurasawa/my-turborepo.git",
+    "directory": "apps/api"
+  },
+  "publishConfig": {
+    "@n-kurasawa:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc",
+    "build": "tsc && tsc --project tsconfig.shared.json",
     "start": "node dist/index.js"
+  },
+  "exports": {
+    "./hono": {
+      "import": {
+        "types": "./dist-shared/shared/hono-client.d.ts",
+        "default": "./dist-shared/shared/hono-client.js"
+      }
+    }
   },
   "dependencies": {
     "hono": "^3.12.0",

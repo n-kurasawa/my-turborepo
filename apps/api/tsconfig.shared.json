@@ -1,9 +1,8 @@
 {
-  "extends": "@repo/typescript-config/hono.json",
-  "include": ["src", "lib"],
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "paths": {
-      "@lib/*": ["./lib/*"]
-    }
-  }
+    "outDir": "./dist-shared"
+  },
+  "include": ["shared"],
+  "exclude": ["node_modules", "**/*.test.ts", "**/*.spec.ts"]
 }

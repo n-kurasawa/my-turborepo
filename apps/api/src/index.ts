@@ -1,18 +1,9 @@
 import { serve } from "@hono/node-server";
 import { swaggerUI } from "@hono/swagger-ui";
 import { OpenAPIHono } from "@hono/zod-openapi";
-import {
-  registerApiHelloRoute,
-  registerHealthRoute,
-  registerHelloWorldRoute,
-} from "./routes";
+import { apiHelloApp, healthApp, helloWorldApp } from "./routes";
 
-const app = new OpenAPIHono();
-
-// エンドポイントの登録
-registerHelloWorldRoute(app);
-registerHealthRoute(app);
-registerApiHelloRoute(app);
+let app = new OpenAPIHono();
 
 // OpenAPI JSONドキュメント
 app.doc("/doc", {
@@ -26,6 +17,14 @@ app.doc("/doc", {
 
 // Swagger UI
 app.get("/ui", swaggerUI({ url: "/doc" }));
+
+// エンドポイントの登録
+const appRoutes = app
+  .route("/", apiHelloApp)
+  .route("/", healthApp)
+  .route("/", helloWorldApp);
+
+export type AppType = typeof appRoutes;
 
 const port = process.env.PORT ? parseInt(process.env.PORT) : 3001;
 

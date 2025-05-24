@@ -23,11 +23,9 @@ const helloWorldRoute = createRoute({
   },
 });
 
-export function registerHelloWorldRoute(app: OpenAPIHono) {
-  app.openapi(helloWorldRoute, (c) => {
-    return c.json({
-      message: "Hello World!",
-      timestamp: new Date().toISOString(),
-    });
+export const helloWorldApp = new OpenAPIHono().openapi(helloWorldRoute, (c) => {
+  return c.json({
+    message: "Hello World!",
+    timestamp: new Date().toISOString(),
   });
-}
+});
