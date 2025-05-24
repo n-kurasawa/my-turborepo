@@ -1,7 +1,8 @@
 {
   "name": "@n-kurasawa/math",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
+  "repository": "https://github.com/n-kurasawa/my-turborepo",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
