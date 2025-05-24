@@ -11,14 +11,17 @@
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc && tsc --project tsconfig.shared.json",
+    "build": "tsup src/index.ts shared/hono-client.ts --format cjs,esm --dts",
     "start": "node dist/index.js"
   },
+  "main": "./dist/shared/hono-client.js",
+  "module": "./dist/shared/hono-client.mjs",
+  "types": "./dist/shared/hono-client.d.ts",
   "exports": {
     "./hono": {
       "import": {
-        "types": "./dist-shared/shared/hono-client.d.ts",
-        "default": "./dist-shared/shared/hono-client.js"
+        "types": "./dist/shared/hono-client.d.ts",
+        "default": "./dist/shared/hono-client.js"
       }
     }
   },
@@ -33,6 +36,7 @@
     "@repo/typescript-config": "workspace:*",
     "typescript": "latest",
     "tsx": "^4.7.0",
-    "@types/node": "^20.11.0"
+    "@types/node": "^20.11.0",
+    "tsup": "^8.5.0"
   }
 }
