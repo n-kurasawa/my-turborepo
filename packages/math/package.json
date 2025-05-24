@@ -2,9 +2,13 @@
   "name": "@n-kurasawa/math",
   "version": "2.0.0",
   "type": "module",
-  "repository": "https://github.com/n-kurasawa/my-turborepo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n-kurasawa/package-test.git",
+    "directory": "packages/math"
+  },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@n-kurasawa:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
