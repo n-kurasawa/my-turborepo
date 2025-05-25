@@ -7,7 +7,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "publish:api": "pnpm publish --filter '@n-kurasawa/my-turborepo-api' --access restricted"
+    "publish:api": "pnpm publish --filter 'api' --access restricted"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
